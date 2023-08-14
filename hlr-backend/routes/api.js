@@ -65,27 +65,45 @@ router.get("/", (req, res) => {
 });
 
 // User routes
-router.get("/user/list", protect, admin, getAllUsers);
-router.get("/user/read/:id", protect, getUserProfile);
-router.patch("/user/update/:id", protect, updateUserProfile);
-router.post("/user/register", registerUser);
-router.post("/user/login", loginUser);
-router.post("/user/forget", forgotPassword);
-router.delete("/user/delete/:id", protect, admin, deleteUser);
+router.get("/list", protect, admin, getAllUsers);
+router.get("/read/:id", protect, getUserProfile);
+router.patch("/update/:id", protect, updateUserProfile);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.post("/forget", forgotPassword);
+router.delete("/delete/:id", protect, admin, deleteUser);
+
+// router.get("/user/list", protect, admin, getAllUsers);
+// router.get("/user/read/:id", protect, getUserProfile);
+// router.patch("/user/update/:id", protect, updateUserProfile);
+// router.post("/user/register", registerUser);
+// router.post("/user/login", loginUser);
+// router.post("/user/forget", forgotPassword);
+// router.delete("/user/delete/:id", protect, admin, deleteUser);
 
 // Category routes
-router.get("/category/list", getAllCategories);
-router.post("/category/create", protect, createCategory);
-router.get("/category/read/:id", getCategoryById);
-router.patch("/category/update/:id", protect, admin, updateCategory);
-router.delete("/category/delete/:id", protect, admin, deleteCategory);
+router.get("/list", getAllCategories);
+router.post("/create", protect, createCategory);
+router.get("/read/:id", getCategoryById);
+router.patch("/update/:id", protect, admin, updateCategory);
+router.delete("/delete/:id", protect, admin, deleteCategory);
+// router.get("/category/list", getAllCategories);
+// router.post("/category/create", protect, createCategory);
+// router.get("/category/read/:id", getCategoryById);
+// router.patch("/category/update/:id", protect, admin, updateCategory);
+// router.delete("/category/delete/:id", protect, admin, deleteCategory);
 
 // Testimonial routes
-router.get("/testimonial/list", getAllTestimonials);
-router.get("/testimonial/read/:id", getTestimonialById);
-router.post("/testimonial/create", protect, admin, createTestimonial);
-router.patch("/testimonial/update/:id", protect, admin, updateTestimonial);
-router.delete("/testimonial/delete/:id", protect, admin, deleteTestimonial);
+router.get("/list", getAllTestimonials);
+router.get("/read/:id", getTestimonialById);
+router.post("/create", protect, admin, createTestimonial);
+router.patch("/update/:id", protect, admin, updateTestimonial);
+router.delete("/delete/:id", protect, admin, deleteTestimonial);
+// router.get("/testimonial/list", getAllTestimonials);
+// router.get("/testimonial/read/:id", getTestimonialById);
+// router.post("/testimonial/create", protect, admin, createTestimonial);
+// router.patch("/testimonial/update/:id", protect, admin, updateTestimonial);
+// router.delete("/testimonial/delete/:id", protect, admin, deleteTestimonial);
 
 // About routes
 router.get("/about/read", getAbout);
@@ -93,24 +111,42 @@ router.post("/about/create-update", protect, admin, createOrUpdateAbout);
 router.delete("/about/delete/:id", protect, admin, deleteAbout);
 
 // Property routes
-router.get("/property/filter", getFilteredProperties);
-router.get("/property/list", getAllProperties);
-router.get("/property/list/user", protect, getUserAllProperties);
-router.get("/property/read/:id", getPropertyById);
-router.get("/property/read-user/:id", protect, getUserAllProperties);
+router.get("/filter", getFilteredProperties);
+router.get("/list", getAllProperties);
+router.get("/list/user", protect, getUserAllProperties);
+router.get("/read/:id", getPropertyById);
+router.get("/read-user/:id", protect, getUserAllProperties);
 router.post(
-  "/property/create",
+  "/create",
   protect,
   upload.array("images", 10),
   createProperty
 );
 router.patch(
-  "/property/update/:id",
+  "/update/:id",
   protect,
   upload.array("images", 10),
   updateProperty
 );
-router.delete("/property/delete/:id", protect, deleteProperty);
+router.delete("/delete/:id", protect, deleteProperty);
+// router.get("/property/filter", getFilteredProperties);
+// router.get("/property/list", getAllProperties);
+// router.get("/property/list/user", protect, getUserAllProperties);
+// router.get("/property/read/:id", getPropertyById);
+// router.get("/property/read-user/:id", protect, getUserAllProperties);
+// router.post(
+//   "/property/create",
+//   protect,
+//   upload.array("images", 10),
+//   createProperty
+// );
+// router.patch(
+//   "/property/update/:id",
+//   protect,
+//   upload.array("images", 10),
+//   updateProperty
+// );
+// router.delete("/property/delete/:id", protect, deleteProperty);
 
 // Order Routes
 router.get("/order/sell/list/:type", protect, admin, getRentSells);
