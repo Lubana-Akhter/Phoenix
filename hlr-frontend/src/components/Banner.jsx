@@ -32,7 +32,7 @@ const Banner = () => {
                             <Typography variant="subtitle1">
                                 Where dreams meet reality. We believe in providing exceptional service, personalized guidance, and transparent transactions. Trust, integrity, and a commitment to finding your perfect home define our brand.
                             </Typography>
-                            <Link to="/login">
+                            <Link to="/user-buy">
                                 <Button variant="contained" style={{ backgroundColor: '#00A76F', color: 'white', marginTop: '1rem', borderRadius: '24px' }}>GET STARTED</Button>
                             </Link>
                         </Box>
