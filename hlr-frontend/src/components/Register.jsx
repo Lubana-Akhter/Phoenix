@@ -23,7 +23,7 @@ const styles = {
         fontSize: '30px',
     },
 };
-const BaseURL = "http://localhost:5000/api"
+const BaseURL = "https://hlr-api.onrender.com/api"
 const Register = () => {
     const containerStyle = {
         minHeight: '100vh', // Set the minimum height to fill the viewport

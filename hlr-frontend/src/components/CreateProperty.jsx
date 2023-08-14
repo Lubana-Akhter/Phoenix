@@ -83,7 +83,7 @@ const CreateProperty = () => {
     const fetchData = async () => {
 
         try {
-            const response = await axios.get('http://localhost:5000/api/category/list');
+            const response = await axios.get('https://hlr-api.onrender.com/api/category/list');
             setCategory(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
