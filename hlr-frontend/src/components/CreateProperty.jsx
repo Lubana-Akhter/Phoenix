@@ -21,7 +21,7 @@ import {
 
 //const BaseURL = "http://localhost:5000/api"
 
-let token = JSON.parse(localStorage.getItem("user")).token;
+//let token = JSON.parse(localStorage.getItem("user")).token;
 //let Id = JSON.parse((localStorage.getItem("user"))._id);
 const CreateProperty = () => {
     const [category, setCategory] = useState([]);
@@ -145,15 +145,15 @@ const CreateProperty = () => {
         //proData.append('image', imageFile);
 
 
-        let config = {
-            headers: {
-                token: token,
-                // token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGQwZTg5MmVlN2YzNjEwM2NhYTVmODIiLCJpYXQiOjE2OTE1NTU1MDMsImV4cCI6MTY5MTU2MjcwM30.wTix0qINJXffsRnN3VKxuF-_-24TbNk_kBz-v2O-oTI",
-            },
-        };
+        // let config = {
+        //     headers: {
+        //         token: token,
+        //         // token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGQwZTg5MmVlN2YzNjEwM2NhYTVmODIiLCJpYXQiOjE2OTE1NTU1MDMsImV4cCI6MTY5MTU2MjcwM30.wTix0qINJXffsRnN3VKxuF-_-24TbNk_kBz-v2O-oTI",
+        //     },
+        // };
         try {
             // Make API call to create property
-            const response = await axios.post("http://localhost:5000/api/property/create", proData, config);
+            const response = await axios.post("http://localhost:5000/api/property/create", proData);
             // Handle successful response
             navigate("/user-buy");
             console.log('Property created successfully:', response.data);
